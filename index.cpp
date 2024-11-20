@@ -72,3 +72,37 @@ public:
         cout << "Intern Salary: $" << stipend << endl;
     }
 };
+
+void addEmployee(string name, int id, string department) {
+    cout << "Added employee: " << name << ", ID: " << id
+         << ", Department: " << department << endl;
+}
+
+void addEmployee(string name, int id, string department, int teamSize) {
+    cout << "Added manager: " << name << ", ID: " << id
+         << ", Department: " << department << ", Team Size: " << teamSize << endl;
+}
+
+
+int main() {
+    // Create Manager, Engineer, and Intern objects
+    Manager m1("Alice", 101, "HR", 10, 1500);
+    Engineer e1("Bob", 102, "IT", "Backend", 5);
+    Intern i1("Charlie", 103, "IT", "Frontend", 2, 800);
+
+    // Display details and calculate salaries
+    m1.displayDetails();
+    m1.calculateSalary();
+
+    e1.displayDetails();
+    e1.calculateSalary();
+
+    i1.displayDetails();
+    i1.calculateSalary();
+
+    // Demonstrate function overloading
+    addEmployee("Diana", 104, "Finance");
+    addEmployee("Eve", 105, "Sales", 8);
+
+    return 0;
+}
